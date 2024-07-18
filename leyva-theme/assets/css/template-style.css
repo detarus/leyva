@@ -1,0 +1,104 @@
+/* Tempalte Styles */
+
+.widget-area {
+  display: none;
+}
+
+.site-main article {
+  width: 100%;
+  padding: 0 14.583vw;
+  padding-top: 3.333vw;
+}
+
+.entry-header {
+  padding-top: 3.125vw;
+}
+
+.woocommerce-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  gap: 0.313vw;
+  margin: 0;
+  font-size: 0.729vw;
+  font-weight: 400;
+  line-height: normal;
+  color: #767676;
+  margin-bottom: 2.083vw;
+}
+
+.woocommerce-breadcrumb a, .woocommerce-breadcrumb .bread-del {
+  color: #101010;
+  font-size: 0.729vw;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 0.3s;
+}
+
+.woocommerce-breadcrumb a:hover{
+  color: #BE3155;
+  transition: all 0.3s;
+}
+
+.entry-title {
+  margin: 0;
+}
+
+.entry-content {
+  margin-top: 2.083vw;
+  margin-bottom: 5.208vw;
+  color: #101010;
+}
+
+h2.wp-block-heading {
+  margin-top: 4.167vw;
+}
+
+h3.wp-block-heading {
+  padding-bottom: 0.417vw;
+  border-bottom: 1px solid #BE3155;
+  font-weight: 400;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 1.302vw;
+}
+
+@media (max-width: 900px) {
+
+  .site-main article {
+    padding: 0 5.333vw;
+    padding-top: 13.867vw;
+  }
+
+  .entry-header {
+    padding-top: 5.333vw;
+  }
+
+  .woocommerce-breadcrumb {
+    gap: 1.333vw;
+    font-size: 3.2vw;
+    margin-bottom: 8.533vw;
+  }
+
+  .woocommerce-breadcrumb a, .woocommerce-breadcrumb .bread-del {
+    font-size: 3.2vw;
+  }
+
+  .entry-content {
+    margin-top: 10.667vw;
+    margin-bottom: 21.333vw;
+  }
+
+  h2.wp-block-heading {
+    margin-top: 21.333vw;
+  }
+
+  h3.wp-block-heading {
+    padding-bottom: 2.133vw;
+  }
+
+  ul {
+    padding-left: 6.667vw;
+  }
+}

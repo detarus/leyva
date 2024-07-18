@@ -1,0 +1,21 @@
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button {
+  border: 1px solid #BE3155;
+  border-radius: 40px;
+  background: #fff;
+  color: #BE3155;
+  font-weight: 500;
+  font-family: Poppins;
+  transition: all 0.3s;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover{
+  background: #BE3155;
+  color: #fff;
+}
+
+.woocommerce-message {
+  border-top-color: #BE3155 !important;
+  border-radius: 0px 0px 20px 20px;
+  background: none;
+  box-shadow: 10px 11px 60px 0px rgba(94, 38, 52, 0.20);
+}

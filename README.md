@@ -1,1 +1,1 @@
-# leyva
+# Leyva theme files

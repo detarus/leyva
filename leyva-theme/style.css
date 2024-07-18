@@ -1,0 +1,2147 @@
+/*!
+Theme Name: leyva-theme
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: leyva-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+leyva-theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Fonts
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Fonts
+--------------------------------------------- */
+
+@font-face {
+	font-weight: 400;
+	font-family: Poppins;
+	src: url('/wp-content/themes/leyva-theme/assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+	font-weight: 500;
+	font-family: Poppins;
+	src: url('/wp-content/themes/leyva-theme/assets/fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+	font-weight: 600;
+	font-family: Poppins;
+	src: url('/wp-content/themes/leyva-theme/assets/fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+	font-weight: 700;
+	font-family: Poppins;
+	src: url('/wp-content/themes/leyva-theme/assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+	font-weight: 700;
+	font-family: Roboto;
+	src: url('/wp-content/themes/leyva-theme/assets/fonts/Roboto-Bold.ttf');
+}
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+	font-family: Poppins;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	/* font-family: inherit; */
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+/* Interactive
+	 ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	/* font-family: "Courier 10 Pitch", courier, monospace; */
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+	background: #fff;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	color: #4169e1;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+/* a:visited {
+	color: #800080;
+} */
+
+a:hover,
+a:focus,
+a:active {
+	color: #BE3155;
+}
+
+a:focus {
+	outline: none;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+	transition: all 0.3s;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+.head-navigation {
+	display: block;
+	width: 100%;
+}
+
+.head-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.head-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.head-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.head-navigation ul ul li:hover > ul,
+.head-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.head-navigation ul ul a {
+	width: 200px;
+}
+
+.head-navigation ul li:hover > ul,
+.head-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.head-navigation li {
+	position: relative;
+}
+
+.head-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}	
+	
+	.head-navigation ul {
+		display: flex;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+/* .post,
+.page {
+	margin: 0 0 1.5em;
+} */
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+
+/* Globals */
+
+h1, h2{
+	color: #101010;
+	font-size: 3.415vh;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+h3{
+	color: #101010;
+	font-size: 2.561vh;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+h4{
+	color: #BE3155;
+	font-size: 2.134vh;
+	font-weight: 600;
+	line-height: normal;
+}
+
+h5{
+	color: #BE3155;
+	font-size: 0.833vw;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.container {
+	width: 100%;
+	padding: 0 14.583vw;
+}
+
+body.no-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Header */
+
+.admin-bar .site-header {
+	top: 32px;
+}
+
+.site-header {
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+	top: 0;
+}
+
+.container.container-head {
+	height: 3.333vw;
+	padding-top: 0.625vw;
+	padding-bottom: 0.625vw;
+	background: #FFFFFF;
+	border-bottom: 0.052vw solid #BE3155;
+	transition: all 0.5s;
+}
+
+.main-head-body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.head-brand-link {
+	position: absolute;
+	display: inline-flex;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: #101010;
+	font-family: Roboto;
+	font-size: 2.561vh;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.head-navigation ul {
+	display: flex;
+	gap: 1.042vw;
+}
+
+.head-navigation a {
+	color: #101010;
+	font-size: 1.921vh;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.head-navigation a:hover {
+	color: #BE3155;
+}
+
+.advanced-head-block {
+	display: flex;
+	align-items: center;
+	gap: 2.188vw;
+}
+
+.cart-link-head {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cart-link-head:hover rect {
+	stroke: #101010;
+}
+
+.cart-link-head:hover path {
+	fill: #101010;
+}
+
+.cart-link-head svg {
+	height: 3.843vh;
+	width: 3.843vh;
+}
+
+.head-count-cart {
+	position: absolute;
+	top: -0.854vh;
+	right: -0.417vw;
+	color: #101010;
+	font-size: 1.494vh;
+	font-weight: 400;
+	line-height: normal;
+	pointer-events: none;
+}
+
+.head-contact-link {
+	padding: 0.747vh 0.99vw;
+	min-width: 6.719vw;
+	width: fit-content;
+	border: 0.107vh solid #BE3155;
+	border-radius: 4.269vh;
+	background: #BE3155;
+	color: #fff;
+	text-align: center;
+	font-size: 1.708vh;
+	font-weight: 400;
+	line-height: normal;
+	white-space: nowrap;
+}
+
+.head-contact-link:hover {
+	color: #BE3155;
+	background: none;
+}
+
+.mobile-head-body {
+	display: none;
+}
+
+/* Mini Cart */
+
+.wc-mini-cart-block:not(.active) {
+	pointer-events: none;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.wc-mini-cart-block:not(.active):before{
+	display: none;
+}
+
+.wc-mini-cart-block:before{
+	content: '';
+	background: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.wc-mini-cart-block {
+	display: block;
+	position: fixed;
+	top: 3.333vw;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	height: calc(100% - 3.333vw);
+	transition: all 0.3s;
+}
+
+.container.container-mini-cart {
+	position: absolute;
+	width: 25vw;
+	right: 0;
+	top: 0;
+	padding: 2.083vw 1.042vw 4.167vw 1.042vw;
+	display: flex;
+	flex-direction: column;
+	gap: 2.083vw;
+	background: #fff;
+	/* overflow: auto; */
+	height: 100%;
+	transition: all 0.5s;
+}
+
+.wc-mini-cart-block:not(.active) .container.container-mini-cart {
+	right: -100%;
+	transition: all 0.5s;
+}
+
+.mini-cart-close {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.417vw;
+	color: #101010;
+}
+
+.mini-cart-close svg {
+	width: 1.667vw;
+	height: 1.667vw;
+}
+
+.mini-cart-close svg path {
+	transition: all 0.3s;
+}
+
+.mini-cart-close:hover svg path {
+	stroke: #BE3155;
+	transition: all 0.3s;
+}
+
+.wc-mini-cart__buttons-block .checkout {
+	display: none!important;
+}
+
+.wc-cart-link-btn, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) .wc-mini-cart__buttons-block .wc-cart-link-btn {
+	color: #fff;
+	text-align: center;
+	font-size: 0.938vw;
+	font-weight: 500;
+	line-height: normal;
+	display: block;
+	width: 100%;
+	padding: 0.573vw 1.198vw;
+	border-radius: 2.083vw;
+	border: 0.052vw solid #BE3155;
+	background: #BE3155;
+	transition: all 0.3s;
+}
+
+.wc-cart-link-btn:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) .wc-mini-cart__buttons-block .wc-cart-link-btn:hover{
+	background: #fff;
+	color: #BE3155;
+	transition: all 0.3s;
+}
+
+.wc-mini-cart-total-price-block {
+	display: flex;
+	flex-direction: column;
+	gap: 0.417vw;
+}
+
+.wc-mini-cart-total__items, .wc-mini-cart-total__price-items, .wc-mini-cart-total__main-price {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wc-mini-cart-total__main-price {
+	padding-top: 0.625vw;
+	border-top: 0.052vw solid #BE3155;
+}
+
+.wc-mini-cart-total__title, .wc-mini-cart-total__subtitle, .wc-cart-final-price, .wc-mini-cart-total__main-price .amount {
+	color: #101010;
+	font-size: 0.833vw;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.wc-mini-cart-total__subtitle, .wc-mini-cart-total__main-price .amount {
+	font-weight: 600;
+}
+
+.wc-mini-cart-total__main-price .amount {
+	color: #BE3155;
+}
+
+.wc-mini-cart-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.156vw;
+	max-height: 23.229vw;
+	overflow: auto;
+}
+
+.wc-mini-cart-wrapp-item {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	padding: 0.417vw 1.042vw;
+	gap: 1.042vw;
+	border-bottom: 0.052vw solid #F2F2F2;
+}
+
+.wc-min-cart__img-block {
+	width: 7.292vw;
+	height: 7.292vw;
+	border-radius: 1.042vw;
+	overflow: hidden;
+}
+
+.wc-min-cart__img-block img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.wc-min-cart__info-block {
+	display: flex;
+	flex-direction: column;
+	gap: 0.417vw;
+	width: calc((100% - 7.292vw) - 1.042vw);
+}
+
+.wc-min-cart__product-name {
+	font-size: 1.042vw;
+	font-weight: 600;
+	margin: 0;
+}
+
+.wc-min-cart__product-details {
+	color: #101010;
+	font-size: 0.729vw;
+	font-weight: 400;
+	line-height: normal;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.wc-min-cart__links-wrapper {
+	display: flex;
+	gap: 1.042vw;
+	margin-top: 0.625vw;
+}
+
+.wc-cart-min__link, .woocommerce a.remove.wc-cart-min__link {
+	color: #BE3155 !important;
+	font-size: 0.729vw;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.wc-cart-min__link:hover, .woocommerce a.remove:hover.wc-cart-min__link:hover{
+	color: #101010!important;
+	background: none;
+}
+
+.wc-min-cart__quantity-block {
+	display: flex;
+	gap: 0.625vw;
+	align-items: center;
+	flex-direction: row;
+}
+
+.wc-min-cart__quantity-minus, .wc-min-cart__quantity-plus {
+	width: 1.25vw;
+	height: 1.25vw;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.wc-min-cart__quantity-minus svg, .wc-min-cart__quantity-plus svg {
+	width: 1.25vw;
+	height: 1.25vw;
+}
+
+.wc-min-cart__quantity-minus svg path, .wc-min-cart__quantity-plus svg path {
+	transition: all 0.3s;
+}
+
+.wc-min-cart__quantity-minus:hover svg path, .wc-min-cart__quantity-plus:hover svg path {
+	transition: all 0.3s;
+	stroke: #BE3155;
+}
+
+input[type="number"].wc-min-cart__quantity-input {
+	color: #101010;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 0.833vw;
+	line-height: normal;
+	padding: 0;
+	-moz-appearance: textfield;
+	width: 1.146vw;
+	border: none;
+	outline: none;
+	pointer-events: none;
+}
+
+.wc-min-cart__quantity-input::-webkit-outer-spin-button, .wc-min-cart__quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wc-min-cart__price-wrapper {
+	display: flex;
+	gap: 1.042vw;
+}
+
+.wc-min-cart__price-wrapper .min-cart-price {
+	color: #101010;
+	font-family: Poppins;
+	font-size: 1.042vw;
+	font-weight: 600;
+	line-height: normal;
+}
+
+/* Footer */
+
+.container.container-footer {
+	padding: 10.993vh 23.958vw 2.775vh;
+	background: #BE3155;
+}
+
+.footer-social-block {
+	display: flex;
+	justify-content: space-between;
+	padding-left: 3.906vw;
+	padding-right: 3.906vw;
+	padding-top: 6.403vh;
+	margin-bottom: 8.538vh;
+	border-top: 0.107vh solid #fff;
+}
+
+.footer-social-link {
+	display: flex;
+	gap: 0.625vw;
+	align-items: center;
+	color: #FFF;
+	font-size: 1.708vh;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.footer-social-link svg {
+	height: 3.415vh;
+	width: auto;
+}
+
+.footer-copyrights {
+	display: flex;
+	color: #FFF;
+	text-align: center;
+	font-size: 1.494vh;
+	font-weight: 400;
+	line-height: 140.625%;
+	gap: 0.625vw;
+	justify-content: center;
+}
+
+.footer-menu-left a, .footer-menu-right a {
+	color: #fff;
+	font-size: 1.921vh;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.footer-home-link {
+	color: #fff;
+	text-align: center;
+	font-family: Roboto;
+	font-size: 2.561vh;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	position: absolute;
+	display: inline-flex;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.copyrights-link {
+	color: #fff;
+}
+
+.footer-social-link path{
+	transition: all 0.3s;
+}
+
+.footer-social-link:hover, .copyrights-link:hover, .footer-home-link:hover, .footer-menu-left a:hover, .footer-menu-right a:hover {
+	color: #101010;
+}
+
+.footer-social-link:hover path{
+	fill: #101010;
+}
+
+.footer-social-link.footer-social-instagram:hover path{
+	fill: transparent;
+	stroke: #101010;
+}
+
+.footer-menu-left ul, .footer-menu-right ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 3.125vw;
+}
+
+.footer-main-block {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 7.5vw;
+	margin-bottom: 6.403vh;
+}
+
+/* Popup */
+
+.contact-popup:not(.active){
+	display: none;
+}
+
+.contact-popup {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+.contact-popup:before {
+	content: '';
+	background: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.container.container-contact-popup {
+	padding: 8.538vh 3.125vw 10.672vh 3.125vw;
+	background: #fff;
+	border-radius: 2.134vh;
+	max-width: 23.021vw;
+	height: auto;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.popup-contact-close {
+	position: absolute;
+	right: 1.25vw;
+	top: 2.561vh;
+	height: 1.494vh;
+	width: 1.494vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup-contact-close svg{
+	height: 1.494vh;
+	width: 1.494vh;
+}
+
+.popup-contact-close path {
+	transition: all 0.3s;
+}
+
+.popup-contact-close:hover path {
+	transition: all 0.3s;
+	fill: #BE3155;
+}
+
+.popup-contact-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2.134vh;
+}
+
+.contact-popup-title {
+	color: #101010;
+	text-align: center;
+	font-size: 2.561vh;
+	font-weight: 400;
+	margin: 0;
+}
+
+.contact-popup-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.281vh;
+}
+
+.input-popup, .textarea-popup {
+	color: #101010 !important;
+	font-family: Poppins;
+	font-size: 1.494vh;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	display: flex;
+	padding: 0.854vh 1.042vw !important;
+	border-radius: 2.134vh !important;
+	border: 0.107vh solid #D9D9D9 !important;
+	min-height: 4.269vh;
+	outline: none;
+}
+
+.input-popup:focus, .textarea-popup:focus {
+	border: 2px solid #BE3155!important;
+}
+
+.textarea-popup {
+	min-height: 7.684vh;
+	resize: none;
+}
+
+.popup-cont-submit {
+	padding: 1.174vh 1.198vw;
+	border-radius: 4.269vh;
+	background: #BE3155;
+	color: #fff;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 1.921vh;
+	font-weight: 500;
+	line-height: normal;
+	margin-top: 0.854vh;
+	cursor: pointer;
+	border: 1px solid #BE3155;
+	transition: all 0.3s;
+}
+
+.popup-cont-submit:hover {
+	border: 1px solid #BE3155;
+	color: #BE3155;
+	background: transparent;
+	transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+	.container {
+    padding: 0 5.333vw;
+	}
+
+	h1, h2{
+		font-size: 6.4vw;
+	}
+
+	h3{
+		font-size: 2.999vh;
+	}
+
+	h4{
+		font-size: 2.399vh;
+	}
+
+	h5{
+		font-size: 3.733vw;
+	}
+
+	/* Header 900 */
+
+	.admin-bar .site-header {
+    top: 42px;
+	}
+
+	.main-head-body {
+    display: none;
+	}
+
+	.mobile-head-body {
+    display: block;
+	}
+
+	.mobile-head-menu:not(.active) {
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.4s;
+	}
+	
+	.container.container-head {
+    padding: 1.199vh 5.333vw;
+    padding-bottom: 1.049vh;
+    height: 7.796vh;
+	}
+
+	.head-brand-link {
+    font-size: 3.598vh;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    transform: none;
+    position: unset;
+	}
+
+	.mobile-head-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.head-cart-block {
+		display: flex;
+		align-items: center;
+		gap: 2.133vw;
+	}
+
+	.cart-link-head svg {
+    height: 4.498vh;
+    width: 4.498vh;
+	}
+
+	.mobile-burger-btn svg {
+    height: 5.397vh;
+    width: 5.397vh;
+	}
+
+	.cart-link-head {
+    gap: 2.133vw;
+	}
+
+	.mobile-burger-btn {
+		height: 5.397vh;
+		width: 5.397vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobile-burger-btn path {
+    fill: #BE3155;
+	}
+
+	.head-count-cart {
+    position: unset;
+    font-size: 1.799vh;
+	}
+
+	.mobile-head-menu {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: #fff;
+		opacity: 1;
+		pointer-events: auto;
+		transition: all 0.4s;
+	}
+
+	.mobile-head-menu--top {
+    display: flex;
+    padding: 1.199vh 5.333vw;
+    padding-bottom: 1.049vh;
+    height: 7.796vh;
+    justify-content: space-between;
+    align-items: center;
+	}
+
+	.mobile-head-menu--top .head-brand-link {
+    color: #BE3156 !important;
+	}
+
+	.head-close {
+    height: 5.397vh;
+	}
+
+	.head-close svg {
+    height: 5.397vh;
+    width: 5.397vh;
+	}
+
+	.head-mobile-content {
+    padding: 5.333vw;
+    padding-top: 4.948vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5.997vh;
+	}
+
+	.head-navigation ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.399vh;
+	}
+
+	.head-mobile-content .head-navigation a {
+    color: #101010 !important;
+    font-size: 3.598vh;
+	}
+
+	.head-contact-link {
+    min-width: 34.4vw;
+    text-align: center;
+    padding: 1.199vh 5.333vw;
+    font-size: 2.399vh;
+	}
+
+	/* Mini Cart 900 */
+
+	.wc-mini-cart-block {
+    top: 13.867vw;
+    height: calc(100% - 13.867vw);
+	}
+
+	.container.container-mini-cart {
+		width: 100%;
+		padding: 5.333vw 5.333vw 21.333vw 5.333vw;
+		gap: 10.667vw;
+		overflow: auto;
+	}
+
+	.mini-cart-close {
+    gap: 2.133vw;
+	}
+
+	.mini-cart-close svg {
+    height: 6.4vw;
+    width: 6.4vw;
+	}
+
+	.wc-mini-cart-wrapper {
+    overflow: visible;
+    max-height: unset;
+	}
+
+	.wc-mini-cart-total-price-block {
+    margin-top: -4.267vw;
+    gap: 2.133vw;
+	}
+
+	.wc-mini-cart-total__title, .wc-mini-cart-total__subtitle, .wc-cart-final-price, .wc-mini-cart-total__main-price .amount {
+    font-size: 4.267vw;
+	}
+
+	.wc-cart-link-btn, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) .wc-mini-cart__buttons-block .wc-cart-link-btn {
+    padding: 2.133vw 5.333vw;
+    font-size: 4.267vw;
+    border-radius: 10.667vw;
+	}
+
+	.wc-mini-cart-total__main-price {
+    padding-top: 3.2vw;
+    border-top: 0.267vw solid #BE3155;
+	}
+
+	.wc-mini-cart-wrapper {
+		max-height: unset;
+		overflow: unset;
+	}
+
+	.wc-mini-cart-wrapp-item {
+    gap: 2.133vw;
+    padding: 2.133vw 0;
+	}
+
+	.wc-min-cart__img-block {
+    width: 32vw;
+    height: 32vw;
+    border-radius: 5.333vw;
+	}
+
+	.wc-min-cart__info-block {
+    gap: 0;
+		width: calc((100% - 32vw) - 2.133vw);
+	}
+
+	.wc-min-cart__product-name {
+    margin-bottom: 2.133vw;
+    font-size: 4.267vw;
+	}
+
+	.wc-min-cart__product-details {
+    font-size: 3.2vw;
+	}
+
+	.wc-min-cart__links-wrapper {
+    gap: 5.333vw;
+    margin-top: 5.333vw;
+    margin-bottom: 1.067vw;
+	}
+
+	.wc-cart-min__link, .woocommerce a.remove.wc-cart-min__link {
+    font-size: 3.733vw;
+	}
+
+	.wc-min-cart__price-wrapper {
+    gap: 5.333vw;
+	}
+
+	.wc-min-cart__quantity-block {
+    gap: 3.2vw;
+	}
+
+	.wc-min-cart__quantity-minus, .wc-min-cart__quantity-plus {
+    width: 6.4vw;
+    height: 6.4vw;
+	}
+
+	.wc-min-cart__quantity-minus svg, .wc-min-cart__quantity-plus svg {
+    width: 6.4vw;
+    height: 6.4vw;
+	}
+
+	input[type="number"].wc-min-cart__quantity-input {
+    font-size: 3.733vw;
+    width: 5.867vw;
+	}
+
+	.wc-min-cart__price-wrapper .min-cart-price {
+    font-size: 4.267vw;
+	}
+
+	/* Footer 900 */
+
+	.container.container-footer {
+    padding: 4.798vh 5.333vw;
+	}
+
+	.footer-main-block {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4.798vh 5.333vw;
+		padding: 0;
+		margin-bottom: 3.598vh;
+		justify-content: center;
+	}
+
+	.footer-home-link {
+    position: unset;
+    display: block;
+    width: 100%;
+    transform: none;
+    font-size: 3.598vh;
+	}
+
+	.footer-menu-left ul, .footer-menu-right ul {
+    gap: 5.333vw;
+	}
+
+	.footer-menu-left a, .footer-menu-right a {
+    font-size: 2.099vh;
+    line-height: 140.625%;
+	}
+
+	.footer-social-block {
+		padding-top: 2.999vh;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 2.399vh;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 5.997vh;
+	}
+
+	.footer-social-instagram, .footer-social-facebook {
+    font-size: 0px !important;
+		gap: 0 !important;
+		display: block;
+	}
+
+	.footer-social-mail {
+    order: 1;
+	}
+
+	.footer-social-tell {
+    order: 2;
+		width: 100%;
+    justify-content: center;
+	}
+
+	.footer-social-instagram {
+    order: 3;
+	}
+
+	.footer-social-facebook {
+    order: 4;
+	}
+
+	.footer-social-link {
+    gap: 3.2vw;
+    font-size: 2.099vh;
+	}
+
+	.footer-copyrights {
+    font-size: 2.099vh;
+    gap: 3.2vw;
+    line-height: normal;
+	}
+
+	/* Popup 900 */
+
+	.contact-popup:before{
+		content: none;
+	}
+
+	.container.container-contact-popup {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 11.394vh 5.333vw 5.997vh 5.333vw;
+		border-radius: 0;
+	}
+
+	.popup-contact-close {
+    height: 2.999vh;
+    width: 2.999vh;
+    top: 2.399vh;
+    right: 7.467vw;
+	}
+
+	.popup-contact-close svg {
+    height: 2.999vh;
+    width: 2.999vh;
+	}
+
+	.popup-contact-content {
+    gap: 3.598vh;
+	}
+
+	.contact-popup-title {
+    font-size: 2.999vh;
+	}
+
+	.contact-popup-form {
+    gap: 1.799vh;
+	}
+
+	.input-popup, .textarea-popup {
+    border-radius: 2.999vh !important;
+    min-height: 5.997vh;
+    padding: 1.199vh 5.333vw !important;
+    font-size: 2.099vh;
+	}
+
+	.textarea-popup {
+    min-height: 10.795vh;
+	}
+
+	.popup-cont-submit {
+    margin-top: 1.199vh;
+    padding: 1.199vh 5.333vw;
+    font-size: 2.399vh;
+	}
+
+}

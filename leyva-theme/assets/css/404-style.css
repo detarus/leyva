@@ -1,0 +1,133 @@
+.s-error-404.not-found {
+  margin-top: 3.333vw;
+  padding-top: 3.125vw;
+  padding-bottom: 5.208vw;
+}
+
+.container.container-404 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 22.5vw;
+  gap: 3.125vw;
+}
+
+.error-404-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-404-image__wallet {
+  width: 31.927vw;
+  height: 24.479vw;
+  margin-left: -4.01vw;
+}
+
+.error-404-image__wallet svg {
+  width: 31.927vw;
+  height: 24.479vw;
+}
+
+.error-404-image__content {
+  border-radius: 1.042vw;
+  background: #FFF;
+  box-shadow: 0.521vw 0.573vw 3.125vw 0px rgba(94, 38, 52, 0.20);
+  width: 28.906vw;
+  height: 17.708vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -1;
+  margin-left: -2.604vw;
+}
+
+.error-404-image__text {
+  color: #101010;
+  font-size: 9.375vw;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.error-404-title {
+  color: #101010;
+  text-align: center;
+  font-size: 1.667vw;
+  font-weight: 500;
+  margin: 0;
+}
+
+.error-404-home-link {
+  display: block;
+  width: 22.813vw;
+  padding: 0.625vw 1.25vw;
+  color: #BE3155;
+  text-align: center;
+  font-size: 0.938vw;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 2.083vw;
+  border: 0.052vw solid #BE3155;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.042vw;
+  transition: all 0.3s;
+}
+
+.error-404-home-link:hover{
+  color: #fff;
+  background: #BE3155;
+  transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+
+  .s-error-404.not-found {
+    margin-top: 13.867vw;
+    padding-top: 10.667vw;
+    padding-bottom: 21.333vw;
+  }
+
+  .container.container-404 {
+    padding: 0 5.333vw;
+    gap: 8.533vw;
+  }
+
+  .error-404-image__wallet {
+    width: 53.927vw;
+    height: 43.208vw;
+    margin-left: -7.733vw;
+  }
+
+  .error-404-image__wallet svg {
+    width: 53.927vw;
+    height: 43.208vw;
+  }
+
+  .error-404-image__content {
+    width: 48vw;
+    height: 29.495vw;
+    border-radius: 5.333vw;
+    box-shadow: 2.667vw 11px 16vw 0px rgba(94, 38, 52, 0.20);
+    margin-left: -5.333vw;
+    margin-top: -2.933vw;
+  }
+
+  .error-404-image__text {
+    font-size: 12.8vw;
+  }
+
+  .error-404-title {
+    font-size: 6.4vw;
+  }
+
+  .error-404-home-link {
+    margin-top: 2.133vw;
+    width: 48vw;
+    padding: 2.133vw 5.333vw;
+    border-radius: 10.667vw;
+    font-size: 4.267vw;
+  }
+
+}

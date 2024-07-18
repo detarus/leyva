@@ -1,0 +1,301 @@
+/* About Us Styles */
+
+/* Head */
+
+.s-single-head {
+  margin-top: 3.333vw;
+  padding-top: 3.125vw;
+  padding-bottom: 2.083vw;
+}
+
+.site-head__title {
+  margin: 0;
+}
+
+.woocommerce-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  gap: 0.313vw;
+  margin: 0;
+  font-size: 0.729vw;
+  font-weight: 400;
+  line-height: normal;
+  color: #767676;
+  margin-bottom: 2.083vw;
+}
+
+.woocommerce-breadcrumb a, .woocommerce-breadcrumb .bread-del {
+  color: #101010;
+  font-size: 0.729vw;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 0.3s;
+}
+
+.woocommerce-breadcrumb a:hover{
+  color: #BE3155;
+  transition: all 0.3s;
+}
+
+/* Content */
+
+.s-right-about {
+  margin-bottom: 2.083vw;
+}
+
+.container.container-right-about {
+  display: flex;
+  gap: 1.042vw;
+  align-items: center;
+}
+
+.right-about__img-block {
+  width: 28.906vw;
+  height: 20.833vw;
+  overflow: hidden;
+  border-radius: 1.042vw;
+}
+
+.right-about__img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-about__text-block {
+  width: calc((100% - 28.906vw) - 1.042vw);
+  padding-top: 1.25vw;
+  padding-bottom: 1.25vw;
+}
+
+.right-about__text-block p:first-child {
+  margin-top: 0;
+}
+
+.right-about__text-block p:last-child {
+  margin-bottom: 0;
+}
+
+.right-about__text-block p {
+  font-size: 0.833vw;
+  color: #101010;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.s-left-about {
+  margin-bottom: 4.167vw;
+}
+
+.container.container-left-about {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.042vw;
+  align-items: center;
+}
+
+.left-about__img-block {
+  width: 28.906vw;
+  height: 20.833vw;
+  overflow: hidden;
+  border-radius: 1.042vw;
+}
+
+.left-about__img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.left-about__text-block {
+  width: calc((100% - 28.906vw) - 1.042vw);
+  padding-top: 1.25vw;
+  padding-bottom: 1.25vw;
+}
+
+.left-about__text-block p:first-child {
+  margin-top: 0;
+}
+
+.left-about__text-block p:last-child {
+  margin-bottom: 0;
+}
+
+.left-about__text-block p {
+  font-size: 0.833vw;
+  color: #101010;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Team */
+
+.s-team {
+  margin-bottom: 5.208vw;
+}
+
+.team-title {
+  margin: 0;
+  margin-bottom: 2.083vw;
+}
+
+.team-wrapper {
+  display: flex;
+  gap: 1.042vw;
+}
+
+.team-wrap {
+  width: calc((100% / 4) - 0.781vw);
+}
+
+.team-wrap {
+  width: calc((100% / 4) - 0.781vw);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25vw;
+}
+
+.team-img-block {
+  width: 100%;
+  height: 19.375vw;
+  overflow: hidden;
+  border-radius: 1.042vw;
+}
+
+.team-img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-info-block {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.625vw;
+  border-top: 0.052vw solid #BE3155;
+  align-items: center;
+}
+
+.team-name {
+  color: #101010;
+  font-size: 0.833vw;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.team-job {
+  color: #101010;
+  font-size: 0.729vw;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+
+  /* Head 900 */
+
+  .s-single-head {
+    margin-top: 13.867vw;
+    padding-top: 5.333vw;
+    padding-bottom: 8.533vw;
+  }
+
+  .woocommerce-breadcrumb {
+    gap: 1.333vw;
+    font-size: 3.2vw;
+    margin-bottom: 8.533vw;
+  }
+
+  .woocommerce-breadcrumb a, .woocommerce-breadcrumb .bread-del {
+    font-size: 3.2vw;
+  }
+
+  /* Content 900 */
+
+  .s-right-about {
+    margin-bottom: 6.4vw;
+  }
+
+  .container.container-right-about, .container.container-left-about {
+    display: flex;
+    flex-direction: column;
+    gap: 5.333vw;
+  }
+
+  .right-about__img-block, .left-about__img-block {
+    width: 100%;
+    height: 61.333vw;
+    border-radius: 5.333vw;
+  }
+
+  .right-about__text-block, .left-about__text-block {
+    width: 100%;
+    padding: 0;
+  }
+
+  .right-about__text-block p, .left-about__text-block p {
+    font-size: 3.733vw;
+  }
+
+  .s-left-about {
+    margin-bottom: 16vw;
+  }
+
+  /* Team 900 */
+
+  .s-team {
+    margin-bottom: 21.333vw;
+  }
+
+  .team-title {
+    margin-bottom: 8.533vw;
+  }
+
+  .team-wrapper {
+    display: block;
+  }
+
+  .team-wrap {
+    gap: 6.4vw;
+  }
+
+  .team-img-block {
+    height: 99.2vw;
+    border-radius: 5.333vw;
+  }
+
+  .team-info-block {
+    padding-top: 3.2vw;
+    border-top: 0.267vw solid #BE3155;
+  }
+
+  .team-name {
+    font-size: 3.733vw;
+  }
+
+  .team-job {
+    font-size: 3.2vw;
+  }
+
+  .team-swiper-pagination{
+    display: flex;
+    justify-content: center;
+    gap: 0.533vw;
+    margin-top: 4.267vw;
+  }
+
+  .team-swiper-pagination .swiper-pagination-bullet{
+    background: #D9D9D9;
+    opacity: 1;
+    width: 3.733vw;
+    height: 0.6vh;
+    border-radius: 0;
+    margin: 0 !important;
+  }
+
+  .team-swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #BE3155;
+  }
+
+}

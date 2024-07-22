@@ -285,162 +285,203 @@ function add_new_options_page() {
 
 function display_options_page_func() {
 
-	// $reqCurl = curl_init();
-	// $postFields = array('codigoFabricante' => '943', 'codigoCliente' => '99973', 'baseDatosCliente' => 'FS943', 'password' => base64_encode('OQAOIe79hl1X'));
-	// curl_setopt_array($reqCurl, array(
-	// 		CURLOPT_URL => 'https://api.sdelsol.com/login/Autenticar',
-	// 		CURLOPT_RETURNTRANSFER => true,
-	// 		CURLOPT_POST => true,
-	// 		CURLOPT_POSTFIELDS => http_build_query($postFields)
-	// ));
-	// $response = curl_exec($reqCurl);
-	// curl_close($reqCurl);
-	// // print_r(json_decode($response)->resultado);
-	// $bearer = json_decode($response)->resultado;
-	// // echo $response;
+	$reqCurl = curl_init();
+	$postFields = array('codigoFabricante' => '943', 'codigoCliente' => '99973', 'baseDatosCliente' => 'FS943', 'password' => base64_encode('OQAOIe79hl1X'));
+	curl_setopt_array($reqCurl, array(
+			CURLOPT_URL => 'https://api.sdelsol.com/login/Autenticar',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_POST => true,
+			CURLOPT_POSTFIELDS => http_build_query($postFields)
+	));
+	$response = curl_exec($reqCurl);
+	curl_close($reqCurl);
+	// print_r(json_decode($response)->resultado);
+	$bearer = json_decode($response)->resultado;
+	// echo '</br></br>';
 
-	// // Carga Tabla
-	// $reqCurl = curl_init();
+	// Carga Tabla
+	$reqCurl = curl_init();
 
-	// curl_setopt_array($reqCurl, array(
-	// 	CURLOPT_URL => 'https://api.sdelsol.com/admin/CargaTabla',
-	// 	CURLOPT_RETURNTRANSFER => true,
-	// 	CURLOPT_ENCODING => '',
-	// 	CURLOPT_MAXREDIRS => 10,
-	// 	CURLOPT_TIMEOUT => 0,
-	// 	CURLOPT_FOLLOWLOCATION => true,
-	// 	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	// 	CURLOPT_CUSTOMREQUEST => 'POST',
-	// 	CURLOPT_POSTFIELDS =>'{
-	// 		"ejercicio": "2024",
-	// 		"tabla": "F_ART",
-	// 		"filtro": "CODART LIKE \'%001%\' ORDER BY CODART DESC"
-	// }',
-	// 	CURLOPT_HTTPHEADER => array(
-	// 		'Content-Type: application/json',
-	// 		'Authorization: Bearer ' . $bearer
-	// 	),
-	// ));
+	curl_setopt_array($reqCurl, array(
+		CURLOPT_URL => 'https://api.sdelsol.com/admin/CargaTabla',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'POST',
+		CURLOPT_POSTFIELDS =>'{
+			"ejercicio": "2024",
+			"tabla": "F_ART",
+			"filtro": "CODART LIKE \'%001%\' ORDER BY CODART DESC"
+	}',
+		CURLOPT_HTTPHEADER => array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $bearer
+		),
+	));
 
-	// $response = curl_exec($reqCurl);
+	$response = curl_exec($reqCurl);
 
-	// curl_close($reqCurl);
-	// $table_arr = json_decode($response)->resultado;
-	// $product_massive = array();
-	// foreach($table_arr as $key => $product_arr){
-	// 		foreach($product_arr as $prod_pos){
-	// 			switch ($prod_pos->columna) {
-	// 				case 'CODART':
-	// 					$product_sku = $prod_pos->dato;
-	// 					break;
-	// 				case 'DESART':
-	// 					$product_name = $prod_pos->dato;
-	// 					break;
-	// 			}
-	// 		}
-	// 		$product_massive[$key] = ['product_sku' => $product_sku, 'product_name' => $product_name];
-	// }
+	curl_close($reqCurl);
+	$table_arr = json_decode($response)->resultado;
+	// print_r($table_arr);
+	// echo '</br></br>';
+	$product_massive = array();
+	foreach($table_arr as $key => $product_arr){
+			foreach($product_arr as $prod_pos){
+				switch ($prod_pos->columna) {
+					case 'CODART':
+						$product_sku = $prod_pos->dato;
+						break;
+					case 'DESART':
+						$product_name = $prod_pos->dato;
+						break;
+					case 'IMGART':
+						$product_img = $prod_pos->dato;
+						break;
+				}
+			}
+			$product_massive[$key] = ['product_sku' => $product_sku, 'product_name' => $product_name, 'product_image' => $product_img];
+	}
 
 	// print_r($product_massive);
-	// $reqCurl = curl_init();
+	$reqCurl = curl_init();
 
-	// curl_setopt_array($reqCurl, array(
-	// 	CURLOPT_URL => 'https://api.sdelsol.com/admin/CargaTabla',
-	// 	CURLOPT_RETURNTRANSFER => true,
-	// 	CURLOPT_ENCODING => '',
-	// 	CURLOPT_MAXREDIRS => 10,
-	// 	CURLOPT_TIMEOUT => 0,
-	// 	CURLOPT_FOLLOWLOCATION => true,
-	// 	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	// 	CURLOPT_CUSTOMREQUEST => 'POST',
-	// 	CURLOPT_POSTFIELDS =>'{
-	// 		"ejercicio": "2024",
-	// 		"tabla": "F_LTA",
-	// 		"filtro": "ARTLTA LIKE \'%001%\' ORDER BY ARTLTA DESC"
-	// }',
-	// 	CURLOPT_HTTPHEADER => array(
-	// 		'Content-Type: application/json',
-	// 		'Authorization: Bearer ' . $bearer
-	// 	),
-	// ));
-	// $response = curl_exec($reqCurl);
+	curl_setopt_array($reqCurl, array(
+		CURLOPT_URL => 'https://api.sdelsol.com/admin/CargaTabla',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'POST',
+		CURLOPT_POSTFIELDS =>'{
+			"ejercicio": "2024",
+			"tabla": "F_LTA",
+			"filtro": "ARTLTA LIKE \'%001%\' ORDER BY ARTLTA DESC"
+	}',
+		CURLOPT_HTTPHEADER => array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $bearer
+		),
+	));
+	$response = curl_exec($reqCurl);
 
-	// curl_close($reqCurl);
-	// $table_price = json_decode($response, true);
+	curl_close($reqCurl);
+	$table_price = json_decode($response, true);
 
-	// foreach($product_massive as $key => $product){
-	// 	foreach($table_price['resultado'] as $num => $price){
-	// 		if($price[1]['dato'] == $product['product_sku']){
-	// 			$product_massive[$key] += ['product_price' => $price[3]['dato']];
-	// 			break;
-	// 		}
-	// 	}
-	// }
+	foreach($product_massive as $key => $product){
+		foreach($table_price['resultado'] as $num => $price){
+			if($price[1]['dato'] == $product['product_sku']){
+				$product_massive[$key] += ['product_price' => $price[3]['dato']];
+				break;
+			}
+		}
+	}
 
-	// $sku_array = array();
+	$sku_array = array();
 
-	// $args = array(
-	// 	'limit' => -1,
-	// 	'orderby' => 'date',
-	// 	'order' => 'DESC'
-	// );
+	$args = array(
+		'limit' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC'
+	);
 
-	// $query = new WC_Product_Query($args);
-	// $products = $query->get_products();
+	$query = new WC_Product_Query($args);
+	$products = $query->get_products();
 
-	// if(!empty($products)){
-	// 	foreach ($products as $query_product) {			
-	// 		if($query_product->get_sku()){
-	// 			$sku_array[] = ['sku' => $query_product->get_sku(), 'id' => $query_product->get_id()];
-	// 		} 
-	// 	}
-	// }
+	if(!empty($products)){
+		foreach ($products as $query_product) {			
+			if($query_product->get_sku()){
+				$sku_array[] = ['sku' => $query_product->get_sku(), 'id' => $query_product->get_id()];
+			} 
+		}
+	}
 
-	// print_r($sku_array);
+	print_r($sku_array);
 
-	// foreach($product_massive as $num => $product_part){
-	// 	$add = false;
-	// 	if($num <= 2){
-	// 		$product_name = $product_part['product_name'];
-	// 		$product_sku = $product_part['product_sku'];
-	// 		$product_price = $product_part['product_price'];
+	foreach($product_massive as $num => $product_part){
+		$add = false;
+		$product_name = $product_part['product_name'];
+		$product_sku = $product_part['product_sku'];
+		$product_price = $product_part['product_price'];
+		$product_img_url = $product_part['product_image'];
 
-	// 		foreach($sku_array as $sku){
-	// 			if($sku['sku'] == $product_sku){
-	// 				$add = false;
-	// 				$product_id = $sku['id'];
-	// 				break;
-	// 			} else {
-	// 				$add = true;
-	// 				$product_id = '';
-	// 			}
-	// 		}
+		// if($product_part['product_image']){
+		// 	echo '</br></br>';
+		// 	echo $product_img_url;
+		// 	echo '</br></br>';
+		// }
 
-	// 		if($add == true){
-	// 			$product = new WC_Product_Simple();
-	// 			$product->set_name($product_name);
-	// 			$product->set_regular_price(number_format($product_price, 2));
-	// 			$product->set_category_ids(array(18));
-	// 			$product->set_sku($product_sku);
-	// 			$product->save();
-	// 		} else {
-	// 			$product = new WC_Product($product_id);
-	// 			$product->set_name($product_name);
-	// 			$product->set_regular_price(number_format($product_price, 2));
-	// 			$product->set_sku($product_sku);
-	// 			$product->save();
-	// 		}
-			
-	// 	} else {
-	// 		break;
-	// 	}
-	// }
+		foreach($sku_array as $sku){
+			if($sku['sku'] == $product_sku){
+				$add = false;
+				$product_id = $sku['id'];
+				break;
+			} else {
+				$add = true;
+				$product_id = '';
+			}
+		}
 
-	$cron_array = get_option('cron');
-	echo '<pre>';
-	print_r($cron_array);
-	exit;
+		if($add == true){
+			$product = new WC_Product_Simple();
+			$product->set_name($product_name);
+			$product->set_regular_price(number_format($product_price, 2));
+			$product->set_category_ids(array(18));
+			$product->set_sku($product_sku);
+			$product->save();
+		} else {
+			$product = new WC_Product($product_id);
+			$product->set_name($product_name);
+			$product->set_regular_price(number_format($product_price, 2));
+			$product->set_sku($product_sku);
+			$product->save();
+		}
+	}
 
+	echo '</br></br></br>';
+
+	$args = array(
+		'limit' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC'
+	);
+
+	$query = new WC_Product_Query($args);
+	$products = $query->get_products();
+	$sku_array = array();
+	$sku_taba = array();
+
+	foreach($product_massive as $key => $product_taba){
+		$sku_taba[$key] = $product_taba['product_sku'];
+	}
+
+	if(!empty($products)){
+		foreach ($products as $query_product) {
+			$delete = true;
+			foreach	($sku_taba as $single_sku){
+				if($single_sku == $query_product->get_sku()){
+					$delete = false;
+					echo $query_product->get_id();
+					break;
+				}
+			}
+			if($delete){
+				wp_update_post(array(
+					'ID' => $query_product->get_id(),
+					'post_status' => 'draft',
+				));
+				echo 'Delete: ID-' . $query_product->get_id() . ' | SKU-' . $query_product->get_sku() . '</br>';
+			}
+		}
+	}
+	
+	// echo '</br></br></br>';
+	// print_r($sku_taba);
 }
 
 if(!wp_next_scheduled('cron_product_update_hook')){
@@ -591,6 +632,37 @@ function product_update_func(){
 			$product->save();
 		}
 	}
-	
-}
 
+	$args = array(
+		'limit' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC'
+	);
+
+	$query = new WC_Product_Query($args);
+	$products = $query->get_products();
+	$sku_array = array();
+	$sku_taba = array();
+
+	foreach($product_massive as $key => $product_taba){
+		$sku_taba[$key] = $product_taba['product_sku'];
+	}
+
+	if(!empty($products)){
+		foreach ($products as $query_product) {
+			$delete = true;
+			foreach	($sku_taba as $single_sku){
+				if($single_sku == $query_product->get_sku()){
+					$delete = false;
+					break;
+				}
+			}
+			if($delete){
+				wp_update_post(array(
+					'ID' => $query_product->get_id(),
+					'post_status' => 'draft',
+				));
+			}
+		}
+	}
+}
